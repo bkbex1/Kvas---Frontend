@@ -1,0 +1,101 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Kvaseya",
+    "theme_author": "Kvaseya",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://github.com/bkbex1/Kvas---Frontend/tree/shopify-theme/shopify-theme",
+    "theme_support_url": "https://github.com/bkbex1/Kvas---Frontend/issues"
+  },
+  {
+    "name": "Бранд",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Лого"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Икона"
+      },
+      {
+        "type": "text",
+        "id": "brand_name",
+        "label": "Име",
+        "default": "Квасен Занаят"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Фон",
+        "default": "#FAFAF7"
+      },
+      {
+        "type": "color",
+        "id": "surface",
+        "label": "Втори фон",
+        "default": "#F5EFE6"
+      },
+      {
+        "type": "color",
+        "id": "ink",
+        "label": "Текст",
+        "default": "#1A0F08"
+      },
+      {
+        "type": "color",
+        "id": "accent",
+        "label": "Акцент",
+        "default": "#C17A3A"
+      },
+      {
+        "type": "color",
+        "id": "gold",
+        "label": "Златисто",
+        "default": "#F5C842"
+      },
+      {
+        "type": "color",
+        "id": "footer",
+        "label": "Footer",
+        "default": "#2E1A0E"
+      },
+      {
+        "type": "color",
+        "id": "button",
+        "label": "Бутони",
+        "default": "#1A0F08"
+      },
+      {
+        "type": "color",
+        "id": "button_text",
+        "label": "Текст на бутон",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Основен шрифт",
+        "default": "inter_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Заглавия",
+        "default": "playfair_display_n7"
+      },
+      {
+        "type": "range",
+        "id": "container_width",
+        "label": "Ширина",
+        "min": 1040,
+        "max": 1440,
+        "step": 40,
+        "unit": "px",
+        "default": 1280
+      }
+    ]
+  }
+]

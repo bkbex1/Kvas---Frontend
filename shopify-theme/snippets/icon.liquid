@@ -1,0 +1,12 @@
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true" focusable="false">
+{% case name %}
+{% when 'search' %}<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>
+{% when 'cart' %}<path d="M5 7h14l1 14H4L5 7Z M9 8V6a3 3 0 0 1 6 0v2"/>
+{% when 'account' %}<circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/>
+{% when 'menu' %}<path d="M3 6h18M3 12h18M3 18h18"/>
+{% when 'arrow' %}<path d="M3 12h18m-7-7 7 7-7 7"/>
+{% when 'leaf' %}<path d="M4 20C-1 8 10 2 21 3c1 12-5 19-14 15M4 20 16 8"/>
+{% when 'truck' %}<path d="M2 5h12v12H2V5Zm12 4h4l4 5v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/>
+{% when 'heart' %}<path d="M12 21 3 12C-3 3 8-1 12 6c4-7 15-3 9 6l-9 9Z"/>
+{% else %}<path d="M4 10C-2 3 9-1 12 4c7-5 15 3 8 7v10H4V10Zm3 3 3-3m1 5 3-3m1 5 3-3"/>
+{% endcase %}</svg>

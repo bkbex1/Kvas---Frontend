@@ -1,0 +1,43 @@
+<header class="site-header{% if request.page_type == 'index' and section.settings.transparent %} is-transparent{% endif %}">
+<div class="header-inner">
+ <a href="{{ routes.root_url }}" class="brand">{% if settings.logo %}{{ settings.logo | image_url: width: 360 | image_tag: widths: '180,360', sizes: '180px', alt: shop.name, loading: 'eager' }}{% else %}<span class="brand-icon">{% render 'icon', name: 'bread' %}</span><span>{{ settings.brand_name | escape }}</span>{% endif %}</a>
+ <nav class="desktop-nav" aria-label="{{ 'general.navigation' | t }}">{% render 'menu', menu: section.settings.menu %}</nav>
+ <div class="header-actions">
+ <a class="icon-button" href="{{ routes.search_url }}" aria-label="{{ 'general.search' | t }}">{% render 'icon', name: 'search' %}</a>
+ {% if shop.customer_accounts_enabled %}<a class="icon-button" href="{{ routes.account_url }}" aria-label="{{ 'general.account' | t }}">{% render 'icon', name: 'account' %}</a>{% endif %}
+ <a class="icon-button cart-link" href="{{ routes.cart_url }}" aria-label="{{ 'cart.title' | t }} ({{ cart.item_count }})">{% render 'icon', name: 'cart' %}{% if cart.item_count > 0 %}<span class="cart-count">{{ cart.item_count }}</span>{% endif %}</a>
+ <a class="button header-shop" href="{{ routes.all_products_collection_url }}">{{ 'general.shop' | t }}</a>
+ <details class="mobile-nav"><summary class="icon-button" aria-label="{{ 'general.menu' | t }}">{% render 'icon', name: 'menu' %}</summary><nav aria-label="{{ 'general.navigation' | t }}">{% render 'menu', menu: section.settings.menu %}</nav></details>
+ </div>
+</div></header>
+{% schema %}
+{
+  "name": "Навигация",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Меню",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "transparent",
+      "label": "Прозрачна навигация на началната страница",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Навигация"
+    }
+  ],
+  "enabled_on": {
+    "groups": [
+      "header"
+    ]
+  }
+}
+{% endschema %}

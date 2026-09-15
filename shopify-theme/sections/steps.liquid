@@ -1,0 +1,85 @@
+<div class="section-space dark" style="--space:{{ section.settings.spacing }}px"><div class="container">{% render 'section-heading', section: section, center: true %}<div class="grid grid-four">{% for block in section.blocks %}<div class="step center" {{ block.shopify_attributes }}><div class="step-icon">{% render 'icon', name: block.settings.icon %}</div><p class="step-number">0{{ forloop.index }}</p><h3>{{ block.settings.heading | escape }}</h3><p>{{ block.settings.text | escape }}</p></div>{% endfor %}</div></div></div>
+{% schema %}
+{
+  "name": "Как работи",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Надзаглавие"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Заглавие"
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Разстояние",
+      "min": 24,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Стъпка",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Икона",
+          "options": [
+            {
+              "value": "bread",
+              "label": "Хляб"
+            },
+            {
+              "value": "truck",
+              "label": "Доставка"
+            },
+            {
+              "value": "leaf",
+              "label": "Лист"
+            },
+            {
+              "value": "heart",
+              "label": "Сърце"
+            },
+            {
+              "value": "search",
+              "label": "Търсене"
+            },
+            {
+              "value": "cart",
+              "label": "Кошница"
+            }
+          ],
+          "default": "bread"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Заглавие"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Описание"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Как работи"
+    }
+  ]
+}
+{% endschema %}

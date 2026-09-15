@@ -1,0 +1,103 @@
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+ <div><a href="{{ routes.root_url }}" class="brand">{% if section.settings.logo %}{{ section.settings.logo | image_url: width: 360 | image_tag: loading: 'lazy', widths: '180,360', sizes: '180px', alt: shop.name }}{% else %}<span class="brand-icon">{% render 'icon' %}</span>{{ settings.brand_name | escape }}{% endif %}</a><div class="rte">{{ section.settings.description }}</div>
+ <div class="social-links">{% for block in section.blocks %}{% if block.type == 'social' and block.settings.url != blank %}<a href="{{ block.settings.url }}" {{ block.shopify_attributes }}>{{ block.settings.label | escape }}</a>{% endif %}{% endfor %}</div></div>
+ {% for block in section.blocks %}{% if block.type == 'menu' %}<div {{ block.shopify_attributes }}><h2 class="footer-title">{{ block.settings.heading | escape }}</h2>{% render 'menu', menu: block.settings.menu %}</div>{% endif %}{% endfor %}
+ <div><h2 class="footer-title">{{ 'general.contact' | t }}</h2><div class="rte">{{ section.settings.contact }}</div>{% if section.settings.email != blank %}<a href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a>{% endif %}{% if section.settings.phone != blank %}<p><a href="tel:{{ section.settings.phone | escape }}">{{ section.settings.phone | escape }}</a></p>{% endif %}</div>
+</div>
+{% if section.settings.newsletter %}<div class="footer-newsletter"><h2>{{ 'newsletter.title' | t }}</h2>{% render 'newsletter-form', section: section %}</div>{% endif %}
+<div class="footer-bottom"><p>© {{ 'now' | date: '%Y' }} {{ shop.name | escape }}. {{ section.settings.copyright | escape }}</p><div>{% for policy in shop.policies %}{% if policy.body != blank %}<a href="{{ policy.url }}">{{ policy.title | escape }}</a>{% endif %}{% endfor %}</div></div>
+</div></footer>
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Footer лого"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Описание",
+      "default": "<p>За хората, които обичат да пекат хляб.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "contact",
+      "label": "Адрес и работно време"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Имейл"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Телефон"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright",
+      "default": "Всички права запазени."
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter",
+      "label": "Покажи бюлетин",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Меню",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Заглавие",
+          "default": "Информация"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Меню"
+        }
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Социална връзка",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Име"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Връзка"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ],
+  "enabled_on": {
+    "groups": [
+      "footer"
+    ]
+  }
+}
+{% endschema %}

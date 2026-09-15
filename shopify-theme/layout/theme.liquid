@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>{{ page_title | escape }}{% unless page_title contains shop.name %} — {{ shop.name | escape }}{% endunless %}{% if current_page != 1 %} — {{ current_page }}{% endif %}</title>
+ <link rel="canonical" href="{{ canonical_url }}">
+ {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+ {% if settings.favicon %}<link rel="icon" href="{{ settings.favicon | image_url: width: 32 }}">{% endif %}
+ {% render 'social-meta' %}
+ {% style %}
+ {{ settings.body_font | font_face: font_display: 'swap' }}
+ {{ settings.heading_font | font_face: font_display: 'swap' }}
+ :root{--bg:{{ settings.background }};--surface:{{ settings.surface }};--ink:{{ settings.ink }};--accent:{{ settings.accent }};--gold:{{ settings.gold }};--footer:{{ settings.footer }};--button:{{ settings.button }};--button-text:{{ settings.button_text }};--container:{{ settings.container_width }}px;--body-font:{{ settings.body_font.family }},{{ settings.body_font.fallback_families }};--heading-font:{{ settings.heading_font.family }},{{ settings.heading_font.fallback_families }};}
+ {% endstyle %}
+ {{ 'theme.css' | asset_url | stylesheet_tag }}
+ <script src="{{ 'theme.js' | asset_url }}" defer></script>
+ {{ content_for_header }}
+</head>
+<body class="template-{{ request.page_type | handle }}">
+ <a class="skip-link" href="#MainContent">{{ 'general.skip' | t }}</a>
+ {% sections 'header-group' %}
+ <main id="MainContent" tabindex="-1">{{ content_for_layout }}</main>
+ {% sections 'footer-group' %}
+</body></html>

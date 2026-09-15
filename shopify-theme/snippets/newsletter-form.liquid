@@ -1,0 +1,9 @@
+{% assign form_id = 'Newsletter-' | append: section.id %}
+{% form 'customer', id: form_id, class: 'newsletter-form' %}
+ <input type="hidden" name="contact[tags]" value="newsletter">
+ <label class="visually-hidden" for="Email-{{ section.id }}">{{ 'general.email' | t }}</label>
+ <input id="Email-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" value="{{ form.email | escape }}" placeholder="{{ 'general.email' | t }}" required {% if form.errors %}aria-invalid="true" aria-describedby="NewsletterErrors-{{ section.id }}"{% endif %}>
+ <button class="button" type="submit">{{ 'newsletter.submit' | t }}</button>
+ {% if form.posted_successfully? %}<p class="form-message" role="status">{{ 'newsletter.success' | t }}</p>{% endif %}
+ {% if form.errors %}<div class="form-message" id="NewsletterErrors-{{ section.id }}" role="alert">{{ form.errors | default_errors }}</div>{% endif %}
+{% endform %}

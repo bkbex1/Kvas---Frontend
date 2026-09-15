@@ -1,0 +1,43 @@
+<div class="banner"><div class="banner-image">{% render 'image', image: section.settings.image, width: 2000 %}</div><div class="container banner-copy"><h2>{{ section.settings.heading | escape }}</h2><div class="rte lead">{{ section.settings.text }}</div>{% if section.settings.label != blank %}<a class="button button-gold" href="{{ section.settings.url | default: routes.all_products_collection_url }}">{{ section.settings.label | escape }} →</a>{% endif %}</div></div>
+{% schema %}
+{
+  "name": "CTA банер",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Изображение"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Заглавие",
+      "default": "Започнете вашето квасено приключение"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Описание",
+      "default": "<p>Открийте инструменти за вашия следващ хляб.</p>"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Бутон",
+      "default": "Пазарувайте сега"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Връзка"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA банер"
+    }
+  ]
+}
+{% endschema %}

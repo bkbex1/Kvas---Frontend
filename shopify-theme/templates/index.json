@@ -1,0 +1,153 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Всичко за вашия",
+        "heading_emphasis": "Перфектен Хляб",
+        "eyebrow": "За любовта към занаятчийския хляб"
+      }
+    },
+    "benefits": {
+      "type": "benefits",
+      "settings": {},
+      "blocks": {
+        "block0": {
+          "type": "benefit",
+          "settings": {
+            "icon": "truck",
+            "heading": "Доставка",
+            "text": "Условия при завършване на поръчката"
+          }
+        },
+        "block1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "bread",
+            "heading": "За домашни пекари",
+            "text": "Инструменти за вашия следващ хляб"
+          }
+        },
+        "block2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "leaf",
+            "heading": "Занаят и вдъхновение",
+            "text": "От кваса до готовия хляб"
+          }
+        },
+        "block3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "heart",
+            "heading": "Свържете се с нас",
+            "text": "Пишете ни с вашите въпроси"
+          }
+        }
+      },
+      "block_order": [
+        "block0",
+        "block1",
+        "block2",
+        "block3"
+      ]
+    },
+    "products": {
+      "type": "featured-products",
+      "settings": {
+        "eyebrow": "Подбрани продукти",
+        "heading": "За вашата домашна пекарна"
+      }
+    },
+    "story": {
+      "type": "story",
+      "settings": {
+        "eyebrow": "Нашата история",
+        "heading": "Страстта към занаятчийския хляб"
+      }
+    },
+    "categories": {
+      "type": "featured-collections",
+      "settings": {
+        "eyebrow": "Разгледайте",
+        "heading": "Нашите категории"
+      }
+    },
+    "steps": {
+      "type": "steps",
+      "settings": {
+        "eyebrow": "Как работи",
+        "heading": "От поръчка до сладкия мирис на пресен хляб"
+      },
+      "blocks": {
+        "block0": {
+          "type": "step",
+          "settings": {
+            "icon": "search",
+            "heading": "Изберете продукти",
+            "text": "Разгледайте нашия каталог"
+          }
+        },
+        "block1": {
+          "type": "step",
+          "settings": {
+            "icon": "cart",
+            "heading": "Добавете в кошница",
+            "text": "Съберете нужните инструменти"
+          }
+        },
+        "block2": {
+          "type": "step",
+          "settings": {
+            "icon": "truck",
+            "heading": "Изберете доставка",
+            "text": "Вижте възможностите при плащане"
+          }
+        },
+        "block3": {
+          "type": "step",
+          "settings": {
+            "icon": "bread",
+            "heading": "Печете с удоволствие",
+            "text": "Опитайте нещо ново в кухнята"
+          }
+        }
+      },
+      "block_order": [
+        "block0",
+        "block1",
+        "block2",
+        "block3"
+      ]
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "eyebrow": "Отзиви",
+        "heading": "Какво казват нашите клиенти"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Бюлетин",
+        "heading": "Получавайте рецепти и оферти"
+      }
+    },
+    "cta": {
+      "type": "banner",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "benefits",
+    "products",
+    "story",
+    "categories",
+    "steps",
+    "testimonials",
+    "newsletter",
+    "cta"
+  ]
+}

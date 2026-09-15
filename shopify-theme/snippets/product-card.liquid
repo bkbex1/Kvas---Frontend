@@ -1,0 +1,4 @@
+<article class="product-card">
+ <a href="{{ product.url }}" class="card-image" tabindex="-1" aria-hidden="true">{% render 'image', image: product.featured_image, width: 720, sizes: '(min-width: 1100px) 25vw, (min-width: 600px) 50vw, 100vw', alt: product.title %}{% unless product.available %}<span class="badge">{{ 'product.sold_out' | t }}</span>{% else %}{% if product.compare_at_price > product.price %}<span class="badge">{{ 'product.sale' | t }}</span>{% endif %}{% endunless %}</a>
+ <div class="card-body"><p class="eyebrow">{{ product.type | escape }}</p><h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3><div class="card-bottom">{% render 'price', product: product %}<a class="icon-button card-purchase" href="{{ product.url }}" aria-label="{{ 'product.view' | t }}: {{ product.title | escape }}">{% render 'icon', name: 'arrow' %}</a></div></div>
+</article>

@@ -1,0 +1,41 @@
+<div class="section-space" style="--space:{{ section.settings.spacing }}px"><div class="container">{% render 'section-heading', section: section, center: true %}<div class="grid grid-two">{% for collection in section.settings.collections %}{% render 'collection-card', collection: collection %}{% else %}<p class="empty-state">{{ 'general.empty_collections' | t }}</p>{% endfor %}</div></div></div>
+{% schema %}
+{
+  "name": "Категории",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Надзаглавие"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Заглавие"
+    },
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "Колекции",
+      "limit": 8
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Разстояние",
+      "min": 24,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    }
+  ],
+  "presets": [
+    {
+      "name": "Категории"
+    }
+  ]
+}
+{% endschema %}
