@@ -1,0 +1,108 @@
+{
+  "general": {
+    "skip": "Skip to content",
+    "navigation": "Main navigation",
+    "search": "Search",
+    "account": "My account",
+    "menu": "Menu",
+    "shop": "Shop now",
+    "view_all": "View all",
+    "email": "Your email address",
+    "contact": "Contact",
+    "name": "Name",
+    "all": "All",
+    "empty_products": "No products to display yet.",
+    "empty_collections": "No collections to display yet.",
+    "editor_reviews": "Add only genuine reviews with permission from their authors. Empty sections are hidden on the storefront.",
+    "pagination": "Pagination",
+    "previous": "Previous page",
+    "next": "Next page",
+    "not_found": "Page not found",
+    "not_found_text": "Check the address or browse the store.",
+    "password": "Store password",
+    "enter": "Enter"
+  },
+  "newsletter": {
+    "title": "Recipes and news",
+    "submit": "Subscribe",
+    "success": "Thank you! Your subscription request was received."
+  },
+  "product": {
+    "from": "From",
+    "sold_out": "Sold out",
+    "sale": "Sale",
+    "view": "View product",
+    "available": "In stock",
+    "unavailable": "Unavailable variant",
+    "sku": "SKU",
+    "quantity": "Quantity",
+    "add": "Add to cart",
+    "description": "Description",
+    "specifications": "Specifications",
+    "care": "Use and care",
+    "bundle_contents": "Bundle contents",
+    "purchase_option": "Purchase option",
+    "one_time": "One-time purchase"
+  },
+  "collection": {
+    "title": "Our collections",
+    "count": {
+      "one": "{{ count }} product",
+      "other": "{{ count }} products"
+    },
+    "sort": "Sort by",
+    "min_price": "Price from",
+    "max_price": "Price to",
+    "apply": "Apply",
+    "clear": "Clear filters"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty.",
+    "continue": "Continue shopping",
+    "remove": "Remove",
+    "update": "Update cart",
+    "summary": "Order summary",
+    "subtotal": "Subtotal",
+    "shipping_note": "Shipping, taxes and applicable discounts are confirmed at checkout.",
+    "note": "Order note",
+    "checkout": "Continue to checkout"
+  },
+  "search": {
+    "count": {
+      "one": "{{ count }} result",
+      "other": "{{ count }} results"
+    },
+    "empty": "No results found."
+  },
+  "blog": {
+    "read": "Read more",
+    "categories": "Blog categories",
+    "empty": "No articles yet.",
+    "comments": "Comments",
+    "comment": "Comment",
+    "submit": "Submit comment",
+    "comment_success": "Your comment has been submitted.",
+    "moderated": "Comments appear after approval."
+  },
+  "recipe": {
+    "empty": "No published recipes yet.",
+    "prep": "Preparation",
+    "bake": "Baking",
+    "total": "Total time",
+    "minutes": "min",
+    "servings": "Servings",
+    "ingredients": "Ingredients",
+    "steps": "Method",
+    "products": "Tools for this recipe"
+  },
+  "gift_card": {
+    "title": "Gift card",
+    "balance": "Balance",
+    "expired": "This card has expired.",
+    "disabled": "This card is not active."
+  },
+  "date_formats": {
+    "date": "%B %d, %Y"
+  }
+}

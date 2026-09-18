@@ -1,0 +1,38 @@
+<product-recommendations data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&amp;product_id={{ product.id }}&amp;limit=4&amp;intent=related">
+{% if recommendations.performed and recommendations.products_count > 0 %}<div class="container section-space" style="--space:{{ section.settings.spacing }}px">{% render 'section-heading', section: section %}<div class="grid grid-four">{% for product in recommendations.products %}{% render 'product-card', product: product %}{% endfor %}</div></div>{% endif %}
+</product-recommendations>
+{% schema %}
+{
+  "name": "Още продукти",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Заглавие",
+      "default": "Може да ви харесат"
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Разстояние",
+      "min": 24,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    }
+  ],
+  "presets": [
+    {
+      "name": "Още продукти"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "product"
+    ]
+  }
+}
+{% endschema %}

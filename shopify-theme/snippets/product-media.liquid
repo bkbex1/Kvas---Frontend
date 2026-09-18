@@ -1,0 +1,6 @@
+{% case media.media_type %}
+{% when 'image' %}{{ media | image_url: width: 1600 | image_tag: loading: loading, widths: '360,720,1100,1600', sizes: '(min-width: 750px) 50vw, 100vw' }}
+{% when 'video' %}{{ media | video_tag: controls: true, preload: 'none', image_size: '800x' }}
+{% when 'external_video' %}{{ media | external_video_tag: loading: 'lazy' }}
+{% when 'model' %}{{ media | model_viewer_tag: reveal: 'interaction', toggleable: true, image_size: '800x' }}
+{% endcase %}

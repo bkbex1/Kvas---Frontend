@@ -1,0 +1,14 @@
+<div class="container page-space"><h1 class="page-heading">{{ 'collection.title' | t }}</h1>{% paginate collections by 12 %}<div class="grid grid-two">{% for collection in collections %}{% render 'collection-card', collection: collection %}{% else %}<p>{{ 'general.empty_collections' | t }}</p>{% endfor %}</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}</div>
+{% schema %}
+{
+  "name": "Всички колекции",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Всички колекции"
+    }
+  ]
+}
+{% endschema %}

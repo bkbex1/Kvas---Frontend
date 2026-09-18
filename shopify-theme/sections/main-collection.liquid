@@ -1,0 +1,30 @@
+<div class="page-hero">{% if collection.image %}{% render 'image', image: collection.image, width: 2000, loading: 'eager' %}{% endif %}<div class="container"><h1>{{ collection.title | escape }}</h1><div class="rte">{{ collection.description }}</div></div></div>
+<div class="container page-space">{% paginate collection.products by section.settings.page_size %}<div class="toolbar"><p>{{ 'collection.count' | t: count: collection.products_count }}</p><a class="text-link" href="{{ routes.search_url }}">{{ 'general.search' | t }}</a></div><div class="catalog-layout">{% render 'filters', collection: collection, section: section %}<div><div class="active-filters">{% for filter in collection.filters %}{% for value in filter.active_values %}<a href="{{ value.url_to_remove }}">{{ value.label | escape }} ×</a>{% endfor %}{% if filter.type == 'price_range' %}{% if filter.min_value.value != nil or filter.max_value.value != nil %}<a href="{{ filter.url_to_remove }}">{{ filter.label | escape }} ×</a>{% endif %}{% endif %}{% endfor %}</div><div class="grid grid-four">{% for product in collection.products %}{% render 'product-card', product: product %}{% else %}<p class="empty-state">{{ 'general.empty_products' | t }}</p>{% endfor %}</div>{% render 'pagination', paginate: paginate %}</div></div>{% endpaginate %}</div>
+{% schema %}
+{
+  "name": "Колекция",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "page_size",
+      "label": "Продукти на страница",
+      "min": 12,
+      "max": 48,
+      "step": 12,
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Колекция"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "collection"
+    ]
+  }
+}
+{% endschema %}

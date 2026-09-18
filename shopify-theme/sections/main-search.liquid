@@ -1,0 +1,15 @@
+<div class="container page-space"><h1>{{ 'general.search' | t }}</h1><form class="search-form" action="{{ routes.search_url }}" method="get" role="search"><label class="visually-hidden" for="Search-{{ section.id }}">{{ 'general.search' | t }}</label><input id="Search-{{ section.id }}" type="search" name="q" value="{{ search.terms | escape }}" required><input type="hidden" name="options[prefix]" value="last"><button class="button" type="submit">{{ 'general.search' | t }}</button></form>
+{% if search.performed %}{% paginate search.results by 24 %}<p>{{ 'search.count' | t: count: search.results_count }}</p><div class="grid grid-four">{% for item in search.results %}{% case item.object_type %}{% when 'product' %}{% render 'product-card', product: item %}{% when 'article' %}{% render 'article-card', article: item %}{% else %}<article class="content-card card-body"><h2><a href="{{ item.url }}">{{ item.title | escape }}</a></h2><p>{{ item.content | strip_html | truncatewords: 30 }}</p></article>{% endcase %}{% else %}<p class="empty-state">{{ 'search.empty' | t }}</p>{% endfor %}</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}{% endif %}</div>
+{% schema %}
+{
+  "name": "Търсене",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Търсене"
+    }
+  ]
+}
+{% endschema %}
