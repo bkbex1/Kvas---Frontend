@@ -1,0 +1,16 @@
+{% assign recipe = metaobject %}
+<article><div class="page-hero">{% if recipe.image.value %}{% render 'image', image: recipe.image.value, width: 2000, loading: 'eager', alt: recipe.title.value %}{% endif %}<div class="container"><p>{{ recipe.category.value | escape }} · {{ recipe.difficulty.value | escape }}</p><h1>{{ recipe.title.value | escape }}</h1><div class="recipe-facts">{% if recipe.prep_time.value %}<span>{{ 'recipe.prep' | t }}: {{ recipe.prep_time.value }} {{ 'recipe.minutes' | t }}</span>{% endif %}{% if recipe.bake_time.value %}<span>{{ 'recipe.bake' | t }}: {{ recipe.bake_time.value }} {{ 'recipe.minutes' | t }}</span>{% endif %}{% if recipe.total_time.value %}<span>{{ 'recipe.total' | t }}: {{ recipe.total_time.value }} {{ 'recipe.minutes' | t }}</span>{% endif %}{% if recipe.servings.value %}<span>{{ 'recipe.servings' | t }}: {{ recipe.servings.value | escape }}</span>{% endif %}</div></div></div>
+<div class="container page-space recipe-layout"><aside class="ingredients"><h2>{{ 'recipe.ingredients' | t }}</h2><ul>{% for ingredient in recipe.ingredients.value %}<li>{{ ingredient | escape }}</li>{% endfor %}</ul>{% if recipe.tips.value %}<div class="rte surface card-body">{{ recipe.tips | metafield_tag }}</div>{% endif %}</aside><div class="recipe-main"><div class="rte lead">{{ recipe.description | metafield_tag }}</div><h2>{{ 'recipe.steps' | t }}</h2><ol class="recipe-steps">{% for step in recipe.steps.value %}<li><div class="rte">{{ step.text | metafield_tag }}</div>{% if step.image.value %}{% render 'image', image: step.image.value, width: 1100, sizes: '(min-width: 750px) 66vw, 100vw' %}{% endif %}</li>{% endfor %}</ol><div class="tags">{% for tag in recipe.tags.value %}<span>{{ tag | escape }}</span>{% endfor %}</div>{% if recipe.related_products.value != blank %}<h2>{{ 'recipe.products' | t }}</h2><div class="grid grid-two">{% for product in recipe.related_products.value %}{% render 'product-card', product: product %}{% endfor %}</div>{% endif %}</div></div></article>
+{% schema %}
+{
+  "name": "Рецепта",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Рецепта"
+    }
+  ]
+}
+{% endschema %}

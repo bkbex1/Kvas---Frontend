@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Книги & Видео уроци",
+        "eyebrow": "Знания и вдъхновение",
+        "center": true
+      }
+    },
+    "videos": {
+      "type": "content-cards",
+      "settings": {
+        "heading": "Видео уроци"
+      }
+    },
+    "books": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Книги за вашата пекарна"
+      }
+    },
+    "content": {
+      "type": "main-page",
+      "settings": {
+        "show_title": false
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "videos",
+    "books",
+    "content"
+  ]
+}

@@ -1,0 +1,14 @@
+<div class="container page-space">{% paginate shop.metaobjects.recipe.values by 24 %}<div class="grid grid-three">{% for recipe in shop.metaobjects.recipe.values %}{% if recipe.system.url != blank %}{% render 'recipe-card', recipe: recipe %}{% endif %}{% else %}<p class="empty-state">{{ 'recipe.empty' | t }}</p>{% endfor %}</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}</div>
+{% schema %}
+{
+  "name": "Рецепти",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Рецепти"
+    }
+  ]
+}
+{% endschema %}

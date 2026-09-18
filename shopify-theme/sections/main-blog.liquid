@@ -1,0 +1,27 @@
+<div class="page-hero">{% if section.settings.image %}{% render 'image', image: section.settings.image, width: 2000, loading: 'eager' %}{% endif %}<div class="container"><h1>{{ blog.title | escape }}</h1><p>{{ section.settings.subtitle | escape }}</p></div></div>
+<div class="container page-space"><nav class="tags" aria-label="{{ 'blog.categories' | t }}"><a href="{{ blog.url }}">{{ 'general.all' | t }}</a>{% for tag in blog.all_tags %}<span>{{ tag | link_to_tag: tag }}</span>{% endfor %}</nav>{% paginate blog.articles by 12 %}<div class="grid grid-three">{% for article in blog.articles %}{% render 'article-card', article: article %}{% else %}<p class="empty-state">{{ 'blog.empty' | t }}</p>{% endfor %}</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}</div>
+{% schema %}
+{
+  "name": "Блог",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Изображение"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Описание",
+      "default": "Вдъхновение за вашата домашна пекарна"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Блог"
+    }
+  ]
+}
+{% endschema %}

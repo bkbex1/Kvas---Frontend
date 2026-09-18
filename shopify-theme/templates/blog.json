@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Получавайте рецепти и оферти"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter"
+  ]
+}

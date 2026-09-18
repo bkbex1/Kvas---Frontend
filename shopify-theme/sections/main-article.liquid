@@ -1,0 +1,23 @@
+<article><div class="page-hero">{% if article.image %}{% render 'image', image: article.image, width: 2000, loading: 'eager' %}{% endif %}<div class="container"><h1>{{ article.title | escape }}</h1></div></div><div class="container article-body page-space"><p class="article-meta">{{ article.published_at | date: format: 'date' }}{% if section.settings.show_author %} · {{ article.author | escape }}{% endif %}</p><div class="rte">{{ article.content }}</div><div class="tags">{% for tag in article.tags %}<span>{{ tag | link_to_tag: tag }}</span>{% endfor %}</div><a class="text-link" href="{{ blog.url }}">← {{ blog.title | escape }}</a>
+{% if blog.comments_enabled? %}<section class="comments" id="comments"><h2>{{ 'blog.comments' | t }}</h2>{% paginate article.comments by 10 %}{% for comment in article.comments %}<div class="comment"><strong>{{ comment.author | escape }}</strong><div class="rte">{{ comment.content }}</div></div>{% endfor %}{% render 'pagination', paginate: paginate %}{% endpaginate %}
+{% form 'new_comment', article, class: 'comment-form' %}{{ form.errors | default_errors }}{% if form.posted_successfully? %}<p role="status">{{ 'blog.comment_success' | t }}</p>{% endif %}<label for="CommentAuthor">{{ 'general.name' | t }}</label><input id="CommentAuthor" name="comment[author]" autocomplete="name" value="{{ form.author | escape }}" required><label for="CommentEmail">{{ 'general.email' | t }}</label><input id="CommentEmail" name="comment[email]" type="email" autocomplete="email" value="{{ form.email | escape }}" required><label for="CommentBody">{{ 'blog.comment' | t }}</label><textarea id="CommentBody" name="comment[body]" rows="5" required>{{ form.body | escape }}</textarea>{% if blog.moderated? %}<p class="small">{{ 'blog.moderated' | t }}</p>{% endif %}<button class="button" type="submit">{{ 'blog.submit' | t }}</button>{% endform %}</section>{% endif %}</div></article><script type="application/ld+json">{{ article | structured_data }}</script>
+{% schema %}
+{
+  "name": "Статия",
+  "tag": "section",
+  "class": "kv-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Покажи автор",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Статия"
+    }
+  ]
+}
+{% endschema %}

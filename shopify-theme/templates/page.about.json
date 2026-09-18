@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "За Нас",
+        "center": true
+      }
+    },
+    "story": {
+      "type": "about-story",
+      "settings": {
+        "eyebrow": "Нашата история",
+        "heading": "Как всичко започна"
+      }
+    },
+    "content": {
+      "type": "main-page",
+      "settings": {
+        "show_title": false
+      }
+    },
+    "values": {
+      "type": "content-cards",
+      "settings": {
+        "heading": "Нашите ценности"
+      }
+    },
+    "team": {
+      "type": "content-cards",
+      "settings": {
+        "heading": "Нашият екип"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "story",
+    "content",
+    "values",
+    "team"
+  ]
+}

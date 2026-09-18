@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Комплекти за вашата пекарна"
+      }
+    },
+    "products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Изберете комплект"
+      }
+    },
+    "content": {
+      "type": "main-page",
+      "settings": {
+        "show_title": false
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "products",
+    "content",
+    "faq"
+  ]
+}

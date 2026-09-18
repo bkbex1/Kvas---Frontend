@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "heading": "Събития и изненади",
+        "center": true
+      }
+    },
+    "content": {
+      "type": "main-page",
+      "settings": {
+        "show_title": false
+      }
+    },
+    "cards": {
+      "type": "content-cards",
+      "settings": {
+        "heading": "За събитието"
+      }
+    },
+    "products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Открийте нашите комплекти"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    },
+    "cta": {
+      "type": "banner",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "content",
+    "cards",
+    "products",
+    "faq",
+    "cta"
+  ]
+}
