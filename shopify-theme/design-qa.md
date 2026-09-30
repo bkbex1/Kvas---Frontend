@@ -3,7 +3,9 @@
 - Source visual truth: `https://kvaseya-frontend.vercel.app/` and `src/pages/home/page.tsx` on branch `shopify-theme`.
 - Implementation: Shopify Liquid theme in this directory.
 - Source viewport inspected: approximately 1266×712 CSS pixels, desktop home route.
-- Implementation screenshot: unavailable without a Shopify development-store domain and theme preview session.
+- Shopify draft: `Kvaseya Development` (`#205496058204`) in `kvaseya.myshopify.com`.
+- Preview URL: `https://kvaseya.myshopify.com?preview_theme_id=205496058204`.
+- Implementation screenshot: password template verified in Shopify; the home route remains behind the store password in the automated browser session.
 - Density normalization: not applicable; no implementation screenshot captured.
 - State: desktop home, top of page.
 
@@ -13,7 +15,7 @@ The source was captured and inspected in the Codex in-app browser. The implement
 
 ## Focused region comparison
 
-Blocked because the Liquid implementation cannot be browser-rendered with real Shopify objects without a development store. Product, collection, cart, localization and theme-editor states also depend on store data.
+The password template, global header/footer, Bulgarian copy and Shopify preview bar rendered successfully from the uploaded draft. Full home, product, collection and cart comparison remains blocked because the automated browser session is not authenticated through the storefront password. These states also depend on catalogue content and merchant imagery.
 
 ## Findings
 
@@ -24,7 +26,7 @@ Blocked because the Liquid implementation cannot be browser-rendered with real S
 ## Implementation checklist
 
 - Upload real imagery and catalogue data.
-- Run `shopify theme dev` with the store domain.
+- Enter the storefront password in the preview browser or disable password protection temporarily during QA.
 - Capture desktop 1440×900 and mobile 390×844 views for home, collection, product and cart.
 - Compare against the source and resolve remaining P0/P1/P2 mismatches.
 
@@ -32,7 +34,9 @@ Blocked because the Liquid implementation cannot be browser-rendered with real S
 
 - Initial source audit: fake claims/reviews and external images identified; theme defaults made neutral and media moved to Shopify.
 - Code iteration: desktop navigation changed to collapse before source overflow; native responsive CSS and reduced-motion behavior added.
-- Post-fix browser comparison: blocked pending Shopify development-store access.
+- Shopify upload: draft theme `#205496058204` uploaded and confirmed as `unpublished` and fully processed.
+- Shopify validation: Theme Check completed with 0 errors and 0 warnings; password template rendered successfully.
+- Post-fix browser comparison: partially verified; full routes remain behind storefront authentication.
 
-final result: blocked
+final result: partial pass — draft upload and password template verified; full visual route comparison blocked by storefront authentication and missing merchant content
 
