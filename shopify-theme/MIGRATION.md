@@ -7,13 +7,13 @@
 | Hardcoded footer links/contact | Footer section group, menus, merchant settings and policies | Migrated | Sample Vitosha address, phone, email and Readdy credit removed |
 | Home full-screen hero | Editable Hero section | Migrated | Desktop/mobile image pickers, overlay, alignment and two CTAs |
 | Hardcoded benefit claims | Editable Benefits blocks | Migrated | Neutral defaults; merchant must verify claims before adding them |
-| `featuredProducts` mock array | Featured collection section and Shopify product cards | Migrated | Price, compare-at price, stock, URLs and images are native |
+| `featuredProducts` mock array | Featured collection section and Shopify product cards | Migrated | Bundled fallback cards reproduce the populated source state; native Shopify products take precedence |
 | Story section and sample statistics | Editable Story section | Migrated | Fake 500+/5+/4.9 statistics removed; caption is blank by default |
 | Hardcoded category array/counts | Selected Shopify collections | Migrated | Counts use `collection.all_products_count` |
 | How-it-works array | Editable Steps blocks | Migrated | Neutral copy, no catalogue/delivery claims |
 | Fabricated testimonials/ratings | Testimonials section with merchant blocks | Migrated | Empty storefront output until genuine reviews are entered |
 | Readdy newsletter endpoint | Shopify customer form | Migrated | Adds `newsletter` tag; consent/email flows remain Admin configuration |
-| Home final CTA | Editable image banner | Migrated | Merchant image picker with placeholder |
+| Home final CTA | Editable image banner | Migrated | Exact retrievable source image bundled; merchant image picker can replace it |
 | `/shop` API/mock catalogue | Native collection template | Migrated | Shopify sorting, Search & Discovery filters and pagination |
 | Wishlist and comparison state | Excluded | Not migrated | No reliable Shopify-native persistence in a theme alone |
 | React product page | Native product template | Migrated | Media, variants, selling plans, quantity rules, product form, SKU and metafields |
@@ -35,9 +35,9 @@
 | Maintenance gate | Password template | Migrated | Shopify storefront password flow |
 | Sparse React i18n | Bulgarian default and English locale JSON | Migrated | Merchant content still needs Shopify Translate & Adapt/manual translation |
 | Hardcoded SEO/geo/Store JSON-LD | Shopify page title, description, canonical, OG, structured data | Migrated | No fake location/contact schema |
-| Readdy search-image URLs | Shopify media/image pickers/placeholders | Migrated | No Readdy dependency in theme source |
+| Readdy search-image URLs | Bundled assets plus Shopify media/image pickers | Migrated | 97 local assets; no runtime Readdy dependency; unavailable dynamic hashes use documented thematic fallbacks |
 
 ## Intentionally unfinished outside theme code
 
-Real product catalogue, collections, images, menus, policies, shipping/payment configuration, recipe entries and verified merchant copy must be entered in Shopify Admin. These are store data and cannot be safely inferred from mock frontend content.
+The repository includes a 36-item draft product CSV and populated theme fallbacks. Shopify collections, menus, policies, shipping/payment settings and native recipe entries still belong in Shopify Admin. Prices and copy from the source mocks must be reviewed before draft products are published.
 

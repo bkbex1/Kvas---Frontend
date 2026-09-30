@@ -1,4 +1,4 @@
-<div class="banner"><div class="banner-image">{% render 'image', image: section.settings.image, width: 2000 %}</div><div class="container banner-copy"><h2>{{ section.settings.heading | escape }}</h2><div class="rte lead">{{ section.settings.text }}</div>{% if section.settings.label != blank %}<a class="button button-gold" href="{{ section.settings.url | default: routes.all_products_collection_url }}">{{ section.settings.label | escape }} →</a>{% endif %}</div></div>
+<div class="banner"><div class="banner-image">{% render 'image', image: section.settings.image, fallback_asset: section.settings.fallback_asset, fallback_width: 1920, fallback_height: 600, width: 2000, alt: section.settings.heading %}</div><div class="container banner-copy"><h2>{{ section.settings.heading | escape }}</h2><div class="rte lead">{{ section.settings.text }}</div>{% if section.settings.label != blank %}<a class="button button-gold" href="{{ section.settings.url | default: routes.all_products_collection_url }}">{{ section.settings.label | escape }} →</a>{% endif %}</div></div>
 {% schema %}
 {
   "name": "CTA банер",
@@ -9,6 +9,12 @@
       "type": "image_picker",
       "id": "image",
       "label": "Изображение"
+    },
+    {
+      "type": "text",
+      "id": "fallback_asset",
+      "label": "Вградено изображение",
+      "default": "kv-home-cta.jpg"
     },
     {
       "type": "text",

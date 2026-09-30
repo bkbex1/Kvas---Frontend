@@ -3,13 +3,16 @@
     "hero": {
       "type": "page-hero",
       "settings": {
-        "heading": "Комплекти за вашата пекарна"
+        "heading": "Комплекти за вашата пекарна",
+        "eyebrow": "Подбрани решения",
+        "fallback_asset": "kv-bundles-hero.jpg"
       }
     },
     "products": {
       "type": "featured-products",
       "settings": {
-        "heading": "Изберете комплект"
+        "heading": "Изберете комплект",
+        "fallback_catalog": "bundles"
       }
     },
     "content": {

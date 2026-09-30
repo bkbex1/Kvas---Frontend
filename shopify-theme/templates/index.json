@@ -5,149 +5,87 @@
       "settings": {
         "heading": "Всичко за вашия",
         "heading_emphasis": "Перфектен Хляб",
-        "eyebrow": "За любовта към занаятчийския хляб"
+        "eyebrow": "За любовта към занаятчийския хляб",
+        "text": "<p>Професионално оборудване за квасен хляб — от начинаещи до майстори пекари. Занаятчийско качество, доставено до вашата врата.</p>",
+        "primary_label": "Разгледайте Магазина",
+        "primary_url": "/collections/all",
+        "secondary_label": "Рецепти & Блог",
+        "secondary_url": "/blogs/news",
+        "overlay": 40,
+        "alignment": "left"
       }
     },
     "benefits": {
       "type": "benefits",
       "settings": {},
       "blocks": {
-        "block0": {
-          "type": "benefit",
-          "settings": {
-            "icon": "truck",
-            "heading": "Доставка",
-            "text": "Условия при завършване на поръчката"
-          }
-        },
-        "block1": {
-          "type": "benefit",
-          "settings": {
-            "icon": "bread",
-            "heading": "За домашни пекари",
-            "text": "Инструменти за вашия следващ хляб"
-          }
-        },
-        "block2": {
-          "type": "benefit",
-          "settings": {
-            "icon": "leaf",
-            "heading": "Занаят и вдъхновение",
-            "text": "От кваса до готовия хляб"
-          }
-        },
-        "block3": {
-          "type": "benefit",
-          "settings": {
-            "icon": "heart",
-            "heading": "Свържете се с нас",
-            "text": "Пишете ни с вашите въпроси"
-          }
-        }
+        "block0": { "type": "benefit", "settings": { "icon": "truck", "heading": "Доставка", "text": "Условия при завършване на поръчката" } },
+        "block1": { "type": "benefit", "settings": { "icon": "bread", "heading": "За домашни пекари", "text": "Инструменти за вашия следващ хляб" } },
+        "block2": { "type": "benefit", "settings": { "icon": "leaf", "heading": "Занаят и вдъхновение", "text": "От кваса до готовия хляб" } },
+        "block3": { "type": "benefit", "settings": { "icon": "heart", "heading": "Свържете се с нас", "text": "Пишете ни с вашите въпроси" } }
       },
-      "block_order": [
-        "block0",
-        "block1",
-        "block2",
-        "block3"
-      ]
+      "block_order": ["block0", "block1", "block2", "block3"]
     },
     "products": {
       "type": "featured-products",
-      "settings": {
-        "eyebrow": "Подбрани продукти",
-        "heading": "За вашата домашна пекарна"
-      }
+      "settings": { "eyebrow": "Подбрани продукти", "heading": "Любими от нашите занаятчии", "limit": 4, "spacing": 96 }
     },
     "story": {
       "type": "story",
       "settings": {
         "eyebrow": "Нашата история",
-        "heading": "Страстта към занаятчийския хляб"
+        "heading": "Страстта към занаятчийския хляб",
+        "text": "<p>Вярваме, че всеки заслужава да пече перфектен хляб у дома. Затова подбираме оборудване и инструменти, създадени за истинския занаят.</p><p>От банетон кошниците до холандските печки, всеки продукт е част от пътя към ароматен домашен хляб.</p>",
+        "label": "Научете повече за нас",
+        "url": "/pages/about",
+        "spacing": 96
       }
     },
     "categories": {
       "type": "featured-collections",
-      "settings": {
-        "eyebrow": "Разгледайте",
-        "heading": "Нашите категории"
-      }
+      "settings": { "eyebrow": "Разгледайте", "heading": "Нашите категории", "spacing": 96 },
+      "blocks": {
+        "cat1": { "type": "category", "settings": { "fallback_asset": "kv-home-category-bannetons.jpg", "heading": "Банетони", "caption": "Инструменти за втасване", "url": "/collections/all" } },
+        "cat2": { "type": "category", "settings": { "fallback_asset": "kv-home-category-measuring.jpg", "heading": "Везни & Измерване", "caption": "Прецизност във всяка рецепта", "url": "/collections/all" } },
+        "cat3": { "type": "category", "settings": { "fallback_asset": "kv-home-category-dutch-ovens.jpg", "heading": "Холандски Печки", "caption": "За хрупкава коричка", "url": "/collections/all" } },
+        "cat4": { "type": "category", "settings": { "fallback_asset": "kv-home-category-flours.jpg", "heading": "Брашна & Съставки", "caption": "Основата на добрия хляб", "url": "/collections/all" } }
+      },
+      "block_order": ["cat1", "cat2", "cat3", "cat4"]
     },
     "steps": {
       "type": "steps",
-      "settings": {
-        "eyebrow": "Как работи",
-        "heading": "От поръчка до сладкия мирис на пресен хляб"
-      },
+      "settings": { "eyebrow": "Как работи", "heading": "От поръчка до сладкия мирис на пресен хляб" },
       "blocks": {
-        "block0": {
-          "type": "step",
-          "settings": {
-            "icon": "search",
-            "heading": "Изберете продукти",
-            "text": "Разгледайте нашия каталог"
-          }
-        },
-        "block1": {
-          "type": "step",
-          "settings": {
-            "icon": "cart",
-            "heading": "Добавете в кошница",
-            "text": "Съберете нужните инструменти"
-          }
-        },
-        "block2": {
-          "type": "step",
-          "settings": {
-            "icon": "truck",
-            "heading": "Изберете доставка",
-            "text": "Вижте възможностите при плащане"
-          }
-        },
-        "block3": {
-          "type": "step",
-          "settings": {
-            "icon": "bread",
-            "heading": "Печете с удоволствие",
-            "text": "Опитайте нещо ново в кухнята"
-          }
-        }
+        "block0": { "type": "step", "settings": { "icon": "search", "heading": "Изберете продукти", "text": "Разгледайте нашия каталог" } },
+        "block1": { "type": "step", "settings": { "icon": "cart", "heading": "Добавете в кошница", "text": "Съберете нужните инструменти" } },
+        "block2": { "type": "step", "settings": { "icon": "truck", "heading": "Изберете доставка", "text": "Вижте възможностите при плащане" } },
+        "block3": { "type": "step", "settings": { "icon": "bread", "heading": "Печете с удоволствие", "text": "Опитайте нещо ново в кухнята" } }
       },
-      "block_order": [
-        "block0",
-        "block1",
-        "block2",
-        "block3"
-      ]
+      "block_order": ["block0", "block1", "block2", "block3"]
     },
     "testimonials": {
       "type": "testimonials",
-      "settings": {
-        "eyebrow": "Отзиви",
-        "heading": "Какво казват нашите клиенти"
-      }
+      "disabled": true,
+      "settings": { "eyebrow": "Отзиви", "heading": "Какво казват нашите клиенти" }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
         "eyebrow": "Бюлетин",
-        "heading": "Получавайте рецепти и оферти"
+        "heading": "Получавайте рецепти и оферти",
+        "text": "<p>Абонирайте се и получавайте рецепти, съвети за пекари и специални оферти директно в пощата си.</p>"
       }
     },
     "cta": {
       "type": "banner",
-      "settings": {}
+      "settings": {
+        "fallback_asset": "kv-home-cta.jpg",
+        "heading": "Започнете вашето квасено приключение",
+        "text": "<p>Открийте всички инструменти, нужни за занаятчийски хляб на световно ниво.</p>",
+        "label": "Пазарувайте сега",
+        "url": "/collections/all"
+      }
     }
   },
-  "order": [
-    "hero",
-    "benefits",
-    "products",
-    "story",
-    "categories",
-    "steps",
-    "testimonials",
-    "newsletter",
-    "cta"
-  ]
+  "order": ["hero", "benefits", "products", "story", "categories", "steps", "testimonials", "newsletter", "cta"]
 }

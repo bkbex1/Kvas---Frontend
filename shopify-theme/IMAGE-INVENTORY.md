@@ -1,31 +1,24 @@
 # Image dependency audit
 
-The React/Vite source contains Readdy-generated image URLs in the home page, page heroes, about mosaic, product/mock fallbacks, recipes, blog, learn, bundles, subscription, vouchers and giveaway content. `src/lib/api.ts` also converts arbitrary text into a Readdy search-image request when an API image is missing.
+The React/Vite source contains Readdy-generated URLs in the home page, page heroes, about mosaic and mock content. The theme has no production dependency on Readdy: the retrievable source media is stored locally in `assets/` and rendered through Shopify's CDN with `asset_url`.
 
-None of those URLs is copied into this theme. This avoids an external production dependency and avoids presenting generated placeholder people/products as authentic Kvaseya content.
+## Bundled media
 
-## Upload before launch
+- 97 `kv-*.jpg` assets are included in the installable theme package.
+- The exact retrievable images used by the live home page are bundled: hero, story, CTA, four product cards and four category cards.
+- Retrievable hero and editorial images for Shop, Blog, Recipes, Bundles, Learn, Giveaway, Vouchers and About are bundled.
+- Product, bundle, book, lesson, recipe and article fallback cards are populated, so the supplied templates do not require manual image uploads.
+- Image pickers and native product/collection/article media remain editable and take precedence when the merchant supplies replacements.
 
-| Placement | Recommended source | Suggested crop |
-| --- | --- | --- |
-| Home hero + mobile hero | Real Kvaseya bread/bakery photography | 2400×1400 landscape; 1100×1500 portrait |
-| Home story | Founder/process photography | 4:5 portrait |
-| Home CTA | Workshop/bread photography | 2000×800 landscape |
-| About hero and 2–4 mosaic images | Real workshop/team/process photography | hero 2000×800; cards 4:5/landscape |
-| Shop/category pages | Shopify collection images | 16:10 or 4:3 |
-| Products and bundles | Shopify product media | 1:1, consistent neutral background |
-| Blog | Shopify article featured images | 16:10 |
-| Recipes | Recipe metaobject images and optional step images | hero 16:9; steps 4:3 |
-| Learn | Merchant-owned videos/posters and real book product images | video 16:9; book 1:1/4:5 |
-| Giveaway/campaign | Approved campaign creative | 16:9 or page-specific |
-| Logo/favicon | Final brand files | wide logo SVG/PNG; square favicon PNG |
+## Source limitation
 
-## Safe fallbacks
+73 dynamic Readdy mock URLs return HTTP 400 (`hash not found`) and the live `/shop` route currently returns no products. Those unavailable mock images are represented by locally bundled, thematically related fallbacks. `imports/media-failures.json` records each unavailable source URL; `imports/media-manifest.json` records the exact downloads.
 
-- Product cards use `product.featured_image`.
-- Collection cards use the collection image, then the first product image.
-- Article cards use `article.image`.
-- Recipe pages use metaobject file references.
-- Theme-controlled editorial media uses `image_picker` or Shopify video settings.
-- Missing media renders a Shopify placeholder only; it never calls an external image API.
+## Safe rendering order
+
+- Product cards use Shopify `product.featured_image`, then their bundled catalogue fallback.
+- Collection cards use the collection image or first product image, then the bundled category fallback.
+- Article and recipe cards use Shopify content media when present, then bundled editorial fallbacks.
+- Theme-controlled editorial media uses `image_picker` first and a bundled asset second.
+- No storefront request calls an external image-generation or search API.
 

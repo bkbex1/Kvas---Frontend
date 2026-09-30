@@ -4,6 +4,8 @@
       "type": "page-hero",
       "settings": {
         "heading": "За Нас",
+        "eyebrow": "Страстта към занаятчийския хляб ни обединява",
+        "fallback_asset": "kv-about-hero.jpg",
         "center": true
       }
     },
@@ -11,8 +13,16 @@
       "type": "about-story",
       "settings": {
         "eyebrow": "Нашата история",
-        "heading": "Как всичко започна"
-      }
+        "heading": "Как всичко започна",
+        "text": "<p>Създадохме Квасен Занаят като място за професионално оборудване и знания за качествен домашен хляб.</p><p>Нашата мисия е да направим занаятчийското хлебопроизводство достъпно за любители и професионални пекари.</p>"
+      },
+      "blocks": {
+        "image1": { "type": "image", "settings": { "fallback_asset": "kv-about-bread.jpg", "alt": "Квасен хляб" } },
+        "image2": { "type": "image", "settings": { "fallback_asset": "kv-about-dough.jpg", "alt": "Оформяне на тесто" } },
+        "image3": { "type": "image", "settings": { "fallback_asset": "kv-about-starter.jpg", "alt": "Активен квас" } },
+        "image4": { "type": "image", "settings": { "fallback_asset": "kv-about-bakery.jpg", "alt": "Занаятчийска пекарна" } }
+      },
+      "block_order": ["image1", "image2", "image3", "image4"]
     },
     "content": {
       "type": "main-page",
@@ -24,20 +34,19 @@
       "type": "content-cards",
       "settings": {
         "heading": "Нашите ценности"
-      }
-    },
-    "team": {
-      "type": "content-cards",
-      "settings": {
-        "heading": "Нашият екип"
-      }
+      },
+      "blocks": {
+        "value1": { "type": "card", "settings": { "heading": "Страст", "text": "<p>Обичаме това, което правим, и споделяме любовта към добрия хляб.</p>" } },
+        "value2": { "type": "card", "settings": { "heading": "Качество", "text": "<p>Подбираме продукти, които бихме използвали в собствените си кухни.</p>" } },
+        "value3": { "type": "card", "settings": { "heading": "Общност", "text": "<p>Събираме хора, които споделят любовта към занаятчийския хляб.</p>" } }
+      },
+      "block_order": ["value1", "value2", "value3"]
     }
   },
   "order": [
     "hero",
     "story",
     "content",
-    "values",
-    "team"
+    "values"
   ]
 }

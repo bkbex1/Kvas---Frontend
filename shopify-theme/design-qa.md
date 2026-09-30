@@ -15,17 +15,16 @@ The source was captured and inspected in the Codex in-app browser. The implement
 
 ## Focused region comparison
 
-The password template, global header/footer, Bulgarian copy and Shopify preview bar rendered successfully from the uploaded draft. Full home, product, collection and cart comparison remains blocked because the automated browser session is not authenticated through the storefront password. These states also depend on catalogue content and merchant imagery.
+The password template, global header/footer, Bulgarian copy and Shopify preview bar rendered successfully from the uploaded draft. The full theme now includes the source home imagery, page heroes and populated fallback cards. Full route comparison remains blocked because the automated browser session is not authenticated through the storefront password.
 
 ## Findings
 
-- [P1] Merchant photography is missing. The source uses full-bleed generated bread photography; the theme intentionally ships with Shopify placeholders until real Kvaseya assets are uploaded.
 - [P2] Final text wrapping and navigation density need a real Theme Editor preview. The source navigation overflows near the observed desktop width; the implementation collapses at 1399px to prevent that regression.
-- [P2] Commerce states need real data. Product variants, selling plans, filters, discounts, articles and recipe metaobjects cannot be visually judged from source code alone.
+- [P2] Commerce states still need Shopify data. Product variants, selling plans, filters, discounts, native articles and recipe metaobjects cannot be visually judged from theme fallbacks alone.
 
 ## Implementation checklist
 
-- Upload real imagery and catalogue data.
+- Import `imports/kvaseya-products.csv` to create the prepared catalogue as draft products.
 - Enter the storefront password in the preview browser or disable password protection temporarily during QA.
 - Capture desktop 1440×900 and mobile 390×844 views for home, collection, product and cart.
 - Compare against the source and resolve remaining P0/P1/P2 mismatches.
@@ -36,7 +35,8 @@ The password template, global header/footer, Bulgarian copy and Shopify preview 
 - Code iteration: desktop navigation changed to collapse before source overflow; native responsive CSS and reduced-motion behavior added.
 - Shopify upload: draft theme `#205496058204` uploaded and confirmed as `unpublished` and fully processed.
 - Shopify validation: Theme Check completed with 0 errors and 0 warnings; password template rendered successfully.
+- Media restoration: 97 local image assets and populated fallback cards added; the exact retrievable live home images are embedded.
 - Post-fix browser comparison: partially verified; full routes remain behind storefront authentication.
 
-final result: partial pass — draft upload and password template verified; full visual route comparison blocked by storefront authentication and missing merchant content
+final result: partial pass — complete populated draft uploaded and password template verified; full visual route comparison is blocked only by storefront authentication
 

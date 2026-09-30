@@ -5,6 +5,7 @@
       "settings": {
         "heading": "Книги & Видео уроци",
         "eyebrow": "Знания и вдъхновение",
+        "fallback_asset": "kv-learn-hero.jpg",
         "center": true
       }
     },
@@ -12,12 +13,83 @@
       "type": "content-cards",
       "settings": {
         "heading": "Видео уроци"
-      }
+      },
+      "blocks": {
+        "video1": {
+          "type": "card",
+          "settings": {
+            "fallback_asset": "kv-video-1.jpg",
+            "heading": "Квас от Нулата — Пълен Курс",
+            "text": "<p>Стъпка по стъпка — от намесване на квас до изпичане на вашия първи перфектен хляб. Мария Стоянова · 6 часа 30 мин · 24 урока · Начинаещи</p>",
+            "label": "Виж урока",
+            "url": "/collections/all"
+          }
+        },
+        "video2": {
+          "type": "card",
+          "settings": {
+            "fallback_asset": "kv-video-2.jpg",
+            "heading": "Майсторски Разрези и Декорации",
+            "text": "<p>Научете как да правите невероятни декоративни разрези върху хляба — листа, цветя, геометрични форми. Иван Георгиев · 3 часа 15 мин · 14 урока · Средно</p>",
+            "label": "Виж урока",
+            "url": "/collections/all"
+          }
+        },
+        "video3": {
+          "type": "card",
+          "settings": {
+            "fallback_asset": "kv-video-3.jpg",
+            "heading": "Пълнозърнести Хлябове",
+            "text": "<p>Спелта, ъргъ, ечемик — научете как да работите с алтернативни брашна за по-здравословен хляб. Петър Колев · 4 часа 20 мин · 18 урока · Средно</p>",
+            "label": "Виж урока",
+            "url": "/collections/all"
+          }
+        },
+        "video4": {
+          "type": "card",
+          "settings": {
+            "fallback_asset": "kv-video-4.jpg",
+            "heading": "Пица с Квас — Неаполитанска Техника",
+            "text": "<p>Автентичната неаполитанска пица с квасена ферментация — тесто, разпъване, печене. Анна Павлова · 2 часа 45 мин · 10 урока · Начинаещи</p>",
+            "label": "Виж урока",
+            "url": "/collections/all"
+          }
+        },
+        "video5": {
+          "type": "card",
+          "settings": {
+            "fallback_asset": "kv-video-5.jpg",
+            "heading": "Напреднали Техники за Хлебари",
+            "text": "<p>Диференциална ферментация, ламинация, натурални оцветители, сложни формирания — за истинските маестри. Иван Георгиев · 8 часа 10 мин · 32 урока · Напреднали</p>",
+            "label": "Виж урока",
+            "url": "/collections/all"
+          }
+        },
+        "video6": {
+          "type": "card",
+          "settings": {
+            "fallback_asset": "kv-video-6.jpg",
+            "heading": "Детски Курс: Хлябче с Мама/Татко",
+            "text": "<p>Забавен курс за деца и родители — лесни рецепти, безопасни техники, много смях и хляб! Мария Стоянова · 1 час 30 мин · 6 урока · Начинаещи</p>",
+            "label": "Виж урока",
+            "url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "video1",
+        "video2",
+        "video3",
+        "video4",
+        "video5",
+        "video6"
+      ]
     },
     "books": {
       "type": "featured-products",
       "settings": {
-        "heading": "Книги за вашата пекарна"
+        "heading": "Книги за вашата пекарна",
+        "fallback_catalog": "books"
       }
     },
     "content": {

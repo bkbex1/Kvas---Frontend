@@ -2,7 +2,9 @@
   "sections": {
     "main": {
       "type": "main-collection",
-      "settings": {}
+      "settings": {
+        "fallback_asset": "kv-bundles-hero.jpg"
+      }
     }
   },
   "order": [

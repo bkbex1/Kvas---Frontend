@@ -6,6 +6,8 @@
 %}
 {% if image != blank %}
  {{ image | image_url: width: image_width | image_tag: loading: image_loading, sizes: image_sizes, widths: '180,360,540,720,960,1200,1600,2000', alt: image_alt, class: class }}
+{% elsif fallback_asset != blank %}
+ <img src="{{ fallback_asset | asset_url }}" alt="{{ image_alt | escape }}" width="{{ fallback_width | default: 1600 }}" height="{{ fallback_height | default: 1000 }}" loading="{{ image_loading }}"{% if class != blank %} class="{{ class }}"{% endif %}>
 {% else %}
  {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder' }}
 {% endif %}

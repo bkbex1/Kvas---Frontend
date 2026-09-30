@@ -1,0 +1,11 @@
+<article class="product-card">
+  <a href="{{ routes.all_products_collection_url }}" class="card-image">
+    {% render 'image', fallback_asset: image_asset, fallback_width: 600, fallback_height: 600, alt: title %}
+    {% if badge != blank %}<span class="badge">{{ badge | escape }}</span>{% endif %}
+  </a>
+  <div class="card-body">
+    <p class="eyebrow">{{ category | escape }}</p>
+    <h3><a href="{{ routes.all_products_collection_url }}">{{ title | escape }}</a></h3>
+    <div class="card-bottom"><div class="price"><strong>{{ price | escape }}</strong>{% if compare_price != blank %}<s>{{ compare_price | escape }}</s>{% endif %}</div><a class="icon-button card-purchase" href="{{ routes.all_products_collection_url }}" aria-label="{{ title | escape }}">{% render 'icon', name: 'cart' %}</a></div>
+  </div>
+</article>

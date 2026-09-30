@@ -1,10 +1,25 @@
-<div class="container page-space">{% paginate shop.metaobjects.recipe.values by 24 %}<div class="grid grid-three">{% for recipe in shop.metaobjects.recipe.values %}{% if recipe.system.url != blank %}{% render 'recipe-card', recipe: recipe %}{% endif %}{% else %}<p class="empty-state">{{ 'recipe.empty' | t }}</p>{% endfor %}</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}</div>
+<div class="container page-space">{% paginate shop.metaobjects.recipe.values by 24 %}<div class="grid grid-three">{% for recipe in shop.metaobjects.recipe.values %}{% if recipe.system.url != blank %}{% render 'recipe-card', recipe: recipe %}{% endif %}{% else %}{% for block in section.blocks %}<article class="article-card" {{ block.shopify_attributes }}><a href="{{ block.settings.url | default: '/pages/recipes' }}">{% render 'image', image: block.settings.image, fallback_asset: block.settings.fallback_asset, fallback_width: 1000, fallback_height: 700, alt: block.settings.heading %}</a><div class="card-body"><p class="eyebrow">{{ block.settings.category | escape }}</p><h3>{{ block.settings.heading | escape }}</h3><p class="article-meta">{{ block.settings.meta | escape }}</p><div class="rte">{{ block.settings.text }}</div></div></article>{% endfor %}{% endfor %}</div>{% render 'pagination', paginate: paginate %}{% endpaginate %}</div>
 {% schema %}
 {
   "name": "Рецепти",
   "tag": "section",
   "class": "kv-section",
   "settings": [],
+  "blocks": [
+    {
+      "type": "recipe",
+      "name": "Рецепта",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Изображение" },
+        { "type": "text", "id": "fallback_asset", "label": "Вградено изображение" },
+        { "type": "text", "id": "heading", "label": "Заглавие" },
+        { "type": "text", "id": "category", "label": "Категория" },
+        { "type": "text", "id": "meta", "label": "Време и трудност" },
+        { "type": "richtext", "id": "text", "label": "Описание" },
+        { "type": "url", "id": "url", "label": "Връзка" }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Рецепти"

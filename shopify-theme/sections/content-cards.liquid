@@ -1,4 +1,4 @@
-{% if section.blocks.size > 0 or request.design_mode %}<div class="section-space" style="--space:{{ section.settings.spacing }}px"><div class="container">{% render 'section-heading', section: section, center: true %}<div class="grid grid-three">{% for block in section.blocks %}<article class="content-card" {{ block.shopify_attributes }}>{% if block.settings.image %}{% render 'image', image: block.settings.image, sizes: '(min-width: 750px) 33vw, 100vw' %}{% endif %}{% if block.settings.video %}{{ block.settings.video | video_tag: controls: true, preload: 'none', image_size: '900x' }}{% endif %}<div class="card-body"><h3>{{ block.settings.heading | escape }}</h3><div class="rte">{{ block.settings.text }}</div>{% if block.settings.url != blank %}<a class="text-link" href="{{ block.settings.url }}">{{ block.settings.label | default: block.settings.heading | escape }} →</a>{% endif %}</div></article>{% endfor %}</div></div></div>{% endif %}
+{% if section.blocks.size > 0 or request.design_mode %}<div class="section-space" style="--space:{{ section.settings.spacing }}px"><div class="container">{% render 'section-heading', section: section, center: true %}<div class="grid grid-three">{% for block in section.blocks %}<article class="content-card" {{ block.shopify_attributes }}>{% if block.settings.image or block.settings.fallback_asset != blank %}{% render 'image', image: block.settings.image, fallback_asset: block.settings.fallback_asset, fallback_width: 900, fallback_height: 700, sizes: '(min-width: 750px) 33vw, 100vw', alt: block.settings.heading %}{% endif %}{% if block.settings.video %}{{ block.settings.video | video_tag: controls: true, preload: 'none', image_size: '900x' }}{% endif %}<div class="card-body"><h3>{{ block.settings.heading | escape }}</h3><div class="rte">{{ block.settings.text }}</div>{% if block.settings.url != blank %}<a class="text-link" href="{{ block.settings.url }}">{{ block.settings.label | default: block.settings.heading | escape }} →</a>{% endif %}</div></article>{% endfor %}</div></div></div>{% endif %}
 {% schema %}
 {
   "name": "Съдържание и екип",
@@ -35,6 +35,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "Изображение"
+        },
+        {
+          "type": "text",
+          "id": "fallback_asset",
+          "label": "Вградено изображение"
         },
         {
           "type": "video",

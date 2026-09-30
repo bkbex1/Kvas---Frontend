@@ -4,6 +4,7 @@
       "type": "page-hero",
       "settings": {
         "heading": "Събития и изненади",
+        "fallback_asset": "kv-giveaway-hero.jpg",
         "center": true
       }
     },
@@ -17,12 +18,61 @@
       "type": "content-cards",
       "settings": {
         "heading": "За събитието"
-      }
+      },
+      "blocks": {
+        "box1": {
+          "type": "card",
+          "settings": {
+            "fallback_asset": "kv-mystery-box-1.jpg",
+            "heading": "Mystery Box Starter",
+            "text": "<p>Перфектна кутия за начинаещи пекари — изненадващи продукти на изключителна цена.</p>",
+            "label": "Разгледайте",
+            "url": "/collections/all"
+          }
+        },
+        "box2": {
+          "type": "card",
+          "settings": {
+            "fallback_asset": "kv-mystery-box-2.jpg",
+            "heading": "Mystery Box Artisan",
+            "text": "<p>За по-напреднали пекари — висококачествени инструменти и специалитети.</p>",
+            "label": "Разгледайте",
+            "url": "/collections/all"
+          }
+        },
+        "box3": {
+          "type": "card",
+          "settings": {
+            "fallback_asset": "kv-mystery-box-3.jpg",
+            "heading": "Mystery Box Deluxe",
+            "text": "<p>Луксозна кутия за истинските ценители — само от най-доброто.</p>",
+            "label": "Разгледайте",
+            "url": "/collections/all"
+          }
+        },
+        "box4": {
+          "type": "card",
+          "settings": {
+            "fallback_asset": "kv-mystery-box-4.jpg",
+            "heading": "Mystery Box Сезонна",
+            "text": "<p>Специална сезонна кутия с продукти, вдъхновени от текущия сезон.</p>",
+            "label": "Разгледайте",
+            "url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "box1",
+        "box2",
+        "box3",
+        "box4"
+      ]
     },
     "products": {
       "type": "featured-products",
       "settings": {
-        "heading": "Открийте нашите комплекти"
+        "heading": "Открийте нашите комплекти",
+        "fallback_catalog": "bundles"
       }
     },
     "faq": {
@@ -31,7 +81,13 @@
     },
     "cta": {
       "type": "banner",
-      "settings": {}
+      "settings": {
+        "fallback_asset": "kv-giveaway-prize.jpg",
+        "heading": "Открийте квасеното приключение",
+        "text": "<p>Комплекти и инструменти, подбрани за домашни пекари.</p>",
+        "label": "Разгледайте продуктите",
+        "url": "/collections/all"
+      }
     }
   },
   "order": [

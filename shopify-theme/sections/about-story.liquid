@@ -1,4 +1,4 @@
-<div class="section-space" style="--space:{{ section.settings.spacing }}px"><div class="container story-grid"><div>{% render 'section-heading', section: section %}<div class="rte lead">{{ section.settings.text }}</div></div><div class="mosaic">{% for block in section.blocks %}<div {{ block.shopify_attributes }}>{% render 'image', image: block.settings.image, width: 700, sizes: '(min-width: 750px) 25vw, 50vw' %}</div>{% endfor %}</div></div></div>
+<div class="section-space" style="--space:{{ section.settings.spacing }}px"><div class="container story-grid"><div>{% render 'section-heading', section: section %}<div class="rte lead">{{ section.settings.text }}</div></div><div class="mosaic">{% for block in section.blocks %}<div {{ block.shopify_attributes }}>{% render 'image', image: block.settings.image, fallback_asset: block.settings.fallback_asset, fallback_width: 800, fallback_height: 800, width: 700, sizes: '(min-width: 750px) 25vw, 50vw', alt: block.settings.alt %}</div>{% endfor %}</div></div></div>
 {% schema %}
 {
   "name": "История и снимки",
@@ -41,6 +41,16 @@
           "type": "image_picker",
           "id": "image",
           "label": "Изображение"
+        },
+        {
+          "type": "text",
+          "id": "fallback_asset",
+          "label": "Вградено изображение"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt текст"
         }
       ]
     }

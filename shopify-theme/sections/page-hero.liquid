@@ -1,4 +1,4 @@
-<div class="page-hero">{% if section.settings.image %}{% render 'image', image: section.settings.image, width: 2000, loading: 'eager' %}{% endif %}<div class="container {% if section.settings.center %}center{% endif %}"><p class="eyebrow">{{ section.settings.eyebrow | escape }}</p><h1>{{ section.settings.heading | default: page.title | escape }}</h1><div class="rte">{{ section.settings.text }}</div></div></div>
+<div class="page-hero">{% render 'image', image: section.settings.image, fallback_asset: section.settings.fallback_asset, fallback_width: 1920, fallback_height: 600, width: 2000, loading: 'eager', alt: section.settings.heading %}<div class="container {% if section.settings.center %}center{% endif %}"><p class="eyebrow">{{ section.settings.eyebrow | escape }}</p><h1>{{ section.settings.heading | default: page.title | escape }}</h1><div class="rte">{{ section.settings.text }}</div></div></div>
 {% schema %}
 {
   "name": "Заглавие със снимка",
@@ -9,6 +9,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "Изображение"
+    },
+    {
+      "type": "text",
+      "id": "fallback_asset",
+      "label": "Вградено изображение"
     },
     {
       "type": "text",
